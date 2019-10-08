@@ -24,6 +24,7 @@ class GramsController < ApplicationController
 
     def new
     @gram = Gram.new
+    @picture = Picture.new
     end
 
     def index
@@ -32,7 +33,6 @@ class GramsController < ApplicationController
 
     def show
       @gram = Gram.find_by_id(params[:id])
-      @picture = Picture.new
       return render_not_found if @gram.blank?
       end
 
